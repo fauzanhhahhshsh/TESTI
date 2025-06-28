@@ -1,11 +1,16 @@
 repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
-if script_key and script_key ~= "" and script_key ~= "your_key" then
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/480cd2cf3280fca3cbf1a7e0f0bf293b.lua"))()
-end
 
 local scripts = {
     [126884695634066] = "https://api.luarmor.net/files/v3/loaders/480cd2cf3280fca3cbf1a7e0f0bf293b.lua",
 }
+
+if script_key and script_key ~= "" and script_key ~= "your_key" then
+    local url = scripts[game.PlaceId]
+    if url then
+        loadstring(game:HttpGetAsync(url))()
+        loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/untitled.lua"))()
+    end
+end
 
 local Players = game:GetService("Players")
 local TweenService = game:GetService("TweenService")
