@@ -23,6 +23,96 @@ gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 gui.ResetOnSpawn = false
 gui.Parent = player:WaitForChild("PlayerGui")
 
+
+local function showNotification(text)
+    local screenGui = gui:FindFirstChild("NotificationGui")
+    if not screenGui then
+        screenGui = Instance.new("ScreenGui")
+        screenGui.Name = "NotificationGui"
+        screenGui.Parent = gui
+        screenGui.ResetOnSpawn = false
+        screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    end
+    
+    local notification = Instance.new("Frame")
+    notification.Name = "Notification"
+    notification.BackgroundColor3 = Color3.fromRGB(30, 30, 40)
+    notification.BackgroundTransparency = 0.1
+    notification.BorderSizePixel = 0
+    notification.Size = UDim2.new(0.2, 0, 0.08, 0)
+    notification.Position = UDim2.new(0.89, 0, 0.79, 0)
+    notification.AnchorPoint = Vector2.new(0.5, 0.5)
+    notification.Parent = screenGui
+    
+    local uiCorner = Instance.new("UICorner")
+    uiCorner.CornerRadius = UDim.new(0, 12)
+    uiCorner.Parent = notification
+    
+    local shadow = Instance.new("ImageLabel")
+    shadow.Name = "Shadow"
+    shadow.Image = "rbxassetid://1316045217"
+    shadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+    shadow.ImageTransparency = 0.8
+    shadow.ScaleType = Enum.ScaleType.Slice
+    shadow.SliceCenter = Rect.new(10, 10, 118, 118)
+    shadow.Size = UDim2.new(1, 20, 1, 20)
+    shadow.Position = UDim2.new(0, -10, 0, -10)
+    shadow.BackgroundTransparency = 1
+    shadow.Parent = notification
+    shadow.ZIndex = -1
+    
+    local textLabel = Instance.new("TextLabel")
+    textLabel.Name = "Text"
+    textLabel.Text = text
+    textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    textLabel.TextSize = 14
+    textLabel.BackgroundTransparency = 1
+    textLabel.Size = UDim2.new(0.9, 0, 0.8, 0)
+    textLabel.Position = UDim2.new(0.05, 0, 0.1, 0)
+    textLabel.Font = Enum.Font.Gotham
+    textLabel.TextXAlignment = Enum.TextXAlignment.Left
+    textLabel.Parent = notification
+    
+    notification.BackgroundTransparency = 1
+    textLabel.TextTransparency = 1
+    
+    local appearTween = TweenService:Create(
+        notification,
+        TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+        {BackgroundTransparency = 0.1}
+    )
+    
+    local textAppearTween = TweenService:Create(
+        textLabel,
+        TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+        {TextTransparency = 0}
+    )
+    
+    appearTween:Play()
+    textAppearTween:Play()
+    
+    wait(3)
+    
+    local disappearTween = TweenService:Create(
+        notification,
+        TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+        {BackgroundTransparency = 1}
+    )
+    
+    local textDisappearTween = TweenService:Create(
+        textLabel,
+        TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+        {TextTransparency = 1}
+    )
+    
+    disappearTween:Play()
+    textDisappearTween:Play()
+    
+    disappearTween.Completed:Connect(function()
+        notification:Destroy()
+    end)
+end
+
 local function makeDraggable(frame, dragHandle)
     local dragStartPos
     local frameStartPos
@@ -203,6 +293,7 @@ getKeyButton.MouseButton1Click:Connect(function()
     wait(0.1)
     TweenService:Create(getKeyButton, TweenInfo.new(0.1), { Size = UDim2.new(1, -40, 0, 40) }):Play()
     setclipboard("https://ads.luarmor.net/get_key?for=No_Lag_Hub_Lootlabs-umLOYTerpavi")
+    showNotification("Successfully Copied Key Link\nPaste it in your browser to continue")
 end)
 
 submitButton.MouseButton1Click:Connect(function()
