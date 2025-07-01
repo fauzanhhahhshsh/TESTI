@@ -18,6 +18,7 @@ local data = {
     "Squirrel", "Starfish", "Tarantula Hawk", "Toucan", "Turtle",
     "Wasp"
   },
+  crate = {"Mysterious Crate", "Sign Crate", "Common Gnome Crate", "Farmers Gnome Crate", "Fun Crate", "Classic Gnome Crate", "Statue Crate", "Beach Crate", "Summer Fun Crate", "Oasis Crate", "Exclusive Cosmetic Crate", "Twilight Crate", "Bloodmoon Crate", "Bee Crate", "Honey Crafters Crate", "Iconic Gnome Crate"},
   egg = { "Anti Bee Egg", "Bee Egg", "Bug Egg", "Common Egg", "Common Summer Egg", "Divine Egg", "Epic Egg", "Exotic Bug Egg", "Legendary Egg", "Mythical Egg", "Night Egg", "Paradise Egg", "Premium Anti Bee Egg", "Rare Egg", "Rare Summer Egg", "Uncommon Egg" },
   place_gear = { "Basic Sprinkler", "Advanced Sprinkler", "Godly Sprinkler", "Master Sprinkler", "Lightning Rod", "Chocolate Sprinkler", "Tropical Sprinkler", "Berry Blusher Sprinkler", "Spice Spritzer Sprinkler", "Sweet Soaker Sprinkler", "Flower Froster Sprinkler", "Stalk Sprout Sprinkler", "Night Staff", "Star Caller", "Honey Sprinkler" },
   craft = {
