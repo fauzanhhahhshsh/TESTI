@@ -9,7 +9,7 @@ local scripts = {
 
 loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/untitled.lua"))()
 isLoad = false
-if script_mode and string.lower(script_mode) == "free" then
+if skip_ui then
     local url = freescripts[game.PlaceId]
     if url then
         loadstring(game:HttpGetAsync(url))()
