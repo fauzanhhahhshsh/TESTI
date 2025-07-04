@@ -316,7 +316,7 @@ keyButton.MouseButton1Click:Connect(function()
     local keyFrame = Instance.new("Frame")
     keyFrame.Name = "KeyFrame"
     keyFrame.Size = UDim2.new(0, 350, 0, 300)
-    keyFrame.Position = UDim2.new(0.5, -175, 0.5, -135)
+    keyFrame.Position = UDim2.new(0.5, -30, 0.5, -30)
     keyFrame.AnchorPoint = Vector2.new(0.5, 0.5)
     keyFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 40)
     keyFrame.BackgroundTransparency = 0.1
@@ -564,7 +564,7 @@ makeDraggable(mainFrame, titleBar)
 local openTween = TweenService:Create(mainFrame, TweenInfo.new(0.5, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
     BackgroundTransparency = 0.1,
     Size = UDim2.new(0, 350, 0, 250),
-    Position = UDim2.new(0.5, -175, 0.5, -100)
+    Position = UDim2.new(0.5, -30, 0.5, -30)
 })
 openTween:Play()
 end
