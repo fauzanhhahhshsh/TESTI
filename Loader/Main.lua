@@ -1,12 +1,10 @@
 repeat task.wait() until game:IsLoaded() and game:GetService("Players") and game:GetService("Players").LocalPlayer and game:GetService("Players").LocalPlayer.Character
-print("Key System Maintance")
-loadstring(game:HttpGet("https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/Garden/Garden-V2.lua"))()
-return
+
 local freescripts = {
      [126884695634066] = "https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/Garden/Garden-V2.lua",
 }
 local scripts = {
-    [126884695634066] = "https://api.luarmor.net/files/v3/loaders/480cd2cf3280fca3cbf1a7e0f0bf293b.lua",
+    [126884695634066] = "https://api.luarmor.net/files/v3/loaders/cea888e6d9e0c6f881ebc8a3d70c3cfb.lua",
 }
 
 loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/untitled.lua"))()
