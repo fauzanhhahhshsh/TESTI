@@ -170,7 +170,7 @@ local data = {
         machine = "DinoEventWorkbench"
       }
     },
-    seeds = {
+    seed = {
       ["Crafters Seed Pack"] = {
         itemname = "Crafters Seed Pack",
         recipe = { "Flower Seed Pack" },
