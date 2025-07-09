@@ -4,11 +4,14 @@ local freescripts = {
      [126884695634066] = "https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/Garden/Garden-V2.lua",
 }
 local scripts = {
-    [126884695634066] = "https://api.luarmor.net/files/v3/loaders/cea888e6d9e0c6f881ebc8a3d70c3cfb.lua",
+    [126884695634066] = "https://api.luarmor.net/files/v3/loaders/7a953911595e67e8494c3d3446b8be5b.lua",
 }
 
 loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/untitled.lua"))()
 isLoad = false
+local lootlabs = "https://ads.luarmor.net/get_key?for=Lootlabs_No_Lag-WAKXwZFYPyHF"
+local linkvertise = "https://ads.luarmor.net/get_key?for=Linkvertise_No_Lag-mSdMfyEDdcbV"
+local rinku = "https://ads.luarmor.net/get_key?for=Rinku_No_Lag-pozgARUxinWe"
 if skip_ui then
     local url = freescripts[game.PlaceId]
     if url then
@@ -315,7 +318,7 @@ keyButton.MouseButton1Click:Connect(function()
     
     local keyFrame = Instance.new("Frame")
     keyFrame.Name = "KeyFrame"
-    keyFrame.Size = UDim2.new(0, 350, 0, 300)
+    keyFrame.Size = UDim2.new(0, 350, 0, 350) -- Increased height to accommodate new button
     keyFrame.Position = UDim2.new(0.5, -30, 0.5, -30)
     keyFrame.AnchorPoint = Vector2.new(0.5, 0.5)
     keyFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 40)
@@ -403,7 +406,7 @@ keyButton.MouseButton1Click:Connect(function()
     local lootlabsButton = Instance.new("TextButton")
     lootlabsButton.Name = "lootlabsButton"
     lootlabsButton.Size = UDim2.new(1, -40, 0, 40)
-    lootlabsButton.Position = UDim2.new(0, 20, 0, 220)
+    lootlabsButton.Position = UDim2.new(0, 20, 0, 240) -- Adjusted position
     lootlabsButton.BackgroundColor3 = Color3.fromRGB(70, 70, 90)
     lootlabsButton.BorderSizePixel = 0
     lootlabsButton.Text = "Get Key [Lootlabs]"
@@ -419,7 +422,7 @@ keyButton.MouseButton1Click:Connect(function()
     local linkVertiseButton = Instance.new("TextButton")
     linkVertiseButton.Name = "linkVertiseButton"
     linkVertiseButton.Size = UDim2.new(1, -40, 0, 40)
-    linkVertiseButton.Position = UDim2.new(0, 20, 0, 170)
+    linkVertiseButton.Position = UDim2.new(0, 20, 0, 190) -- Adjusted position
     linkVertiseButton.BackgroundColor3 = Color3.fromRGB(70, 70, 90)
     linkVertiseButton.BorderSizePixel = 0
     linkVertiseButton.Text = "Get Key [Linkvertise]"
@@ -431,6 +434,22 @@ keyButton.MouseButton1Click:Connect(function()
     local discordCorner = Instance.new("UICorner")
     discordCorner.CornerRadius = UDim.new(0, 8)
     discordCorner.Parent = linkVertiseButton
+
+    local rinkuButton = Instance.new("TextButton")
+    rinkuButton.Name = "rinkuButton"
+    rinkuButton.Size = UDim2.new(1, -40, 0, 40)
+    rinkuButton.Position = UDim2.new(0, 20, 0, 290)
+    rinkuButton.BackgroundColor3 = Color3.fromRGB(70, 70, 90)
+    rinkuButton.BorderSizePixel = 0
+    rinkuButton.Text = "Get Key [Rinku]"
+    rinkuButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    rinkuButton.TextSize = 16
+    rinkuButton.Font = Enum.Font.GothamSemibold
+    rinkuButton.Parent = keyFrame
+
+    local rinkuCorner = Instance.new("UICorner")
+    rinkuCorner.CornerRadius = UDim.new(0, 8)
+    rinkuCorner.Parent = rinkuButton
 
     local submitButton = Instance.new("TextButton")
     submitButton.Name = "SubmitButton"
@@ -450,6 +469,7 @@ keyButton.MouseButton1Click:Connect(function()
 
     buttonHoverEffect(lootlabsButton)
     buttonHoverEffect(linkVertiseButton)
+    buttonHoverEffect(rinkuButton)
     buttonHoverEffect(submitButton)
 
     keyCloseButton.MouseButton1Click:Connect(function()
@@ -467,7 +487,7 @@ keyButton.MouseButton1Click:Connect(function()
         TweenService:Create(lootlabsButton, TweenInfo.new(0.1), {Size = UDim2.new(1, -45, 0, 35)}):Play()
         wait(0.1)
         TweenService:Create(lootlabsButton, TweenInfo.new(0.1), {Size = UDim2.new(1, -40, 0, 40)}):Play()
-        setclipboard("https://ads.luarmor.net/get_key?for=No_Lag_Hub_Lootlabs-umLOYTerpavi")
+        setclipboard(lootlabs)
         showNotification("Successfully Copied Lootlabs Key Link\nPaste it in your browser to continue")
     end)
 
@@ -475,8 +495,16 @@ keyButton.MouseButton1Click:Connect(function()
         TweenService:Create(linkVertiseButton, TweenInfo.new(0.1), {Size = UDim2.new(1, -45, 0, 35)}):Play()
         wait(0.1)
         TweenService:Create(linkVertiseButton, TweenInfo.new(0.1), {Size = UDim2.new(1, -40, 0, 40)}):Play()
-        setclipboard("https://ads.luarmor.net/get_key?for=-JnDKbaSAMrRt")
+        setclipboard(linkvertise)
         showNotification("Successfully Copied Linkvertise Key Link\nPaste it in your browser to continue")
+    end)
+
+    rinkuButton.MouseButton1Click:Connect(function()
+        TweenService:Create(rinkuButton, TweenInfo.new(0.1), {Size = UDim2.new(1, -45, 0, 35)}):Play()
+        wait(0.1)
+        TweenService:Create(rinkuButton, TweenInfo.new(0.1), {Size = UDim2.new(1, -40, 0, 40)}):Play()
+        setclipboard(rinku)
+        showNotification("Successfully Copied Rinku Key Link\nPaste it in your browser to continue")
     end)
 
     submitButton.MouseButton1Click:Connect(function()
