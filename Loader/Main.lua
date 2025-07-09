@@ -409,7 +409,7 @@ keyButton.MouseButton1Click:Connect(function()
     lootlabsButton.Position = UDim2.new(0, 20, 0, 240) -- Adjusted position
     lootlabsButton.BackgroundColor3 = Color3.fromRGB(70, 70, 90)
     lootlabsButton.BorderSizePixel = 0
-    lootlabsButton.Text = "Get Key [Lootlabs]"
+    lootlabsButton.Text = "Get Key [Lootlabs] (12h)"
     lootlabsButton.TextColor3 = Color3.fromRGB(255, 255, 255)
     lootlabsButton.TextSize = 16
     lootlabsButton.Font = Enum.Font.GothamSemibold
@@ -425,7 +425,7 @@ keyButton.MouseButton1Click:Connect(function()
     linkVertiseButton.Position = UDim2.new(0, 20, 0, 190) -- Adjusted position
     linkVertiseButton.BackgroundColor3 = Color3.fromRGB(70, 70, 90)
     linkVertiseButton.BorderSizePixel = 0
-    linkVertiseButton.Text = "Get Key [Linkvertise]"
+    linkVertiseButton.Text = "Get Key [Linkvertise] (12h)"
     linkVertiseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
     linkVertiseButton.TextSize = 16
     linkVertiseButton.Font = Enum.Font.GothamSemibold
@@ -441,7 +441,7 @@ keyButton.MouseButton1Click:Connect(function()
     rinkuButton.Position = UDim2.new(0, 20, 0, 290)
     rinkuButton.BackgroundColor3 = Color3.fromRGB(70, 70, 90)
     rinkuButton.BorderSizePixel = 0
-    rinkuButton.Text = "Get Key [Rinku]"
+    rinkuButton.Text = "Get Key [Rinku] (24h)"
     rinkuButton.TextColor3 = Color3.fromRGB(255, 255, 255)
     rinkuButton.TextSize = 16
     rinkuButton.Font = Enum.Font.GothamSemibold
