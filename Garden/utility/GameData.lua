@@ -1,10 +1,15 @@
 local data = {
   fruit = {"All Selection" ,"Aloe Vera", "Apple", "Avocado", "Bamboo", "Banana", "Banana", "Beanstalk", "Bee Balm", "Bell Pepper", "Bendboo", "Blood Banana", "Blue Lollipop", "Blueberry", "Bone Blossom", "Boneboo", "Burning Bud", "Cacao", "Cactus", "Cantaloupe", "Carrot", "Cauliflower", "Celestiberry", "Ceramic", "Cherry Blossom", "Chocolate Carrot", "Cocovine", "Coconut", "Cranberry", "Crimson Vine", "Crocus", "Cursed Fruit", "Daffodil", "Dandelion", "Delphinium", "Dragon Fruit", "Dragon Pepper", "Durian", "Easter Egg", "Eggplant", "Elephant Ears", "Ember Lily", "Feijoa", "Firefly Fern", "Firework Flower", "Foxglove", "Fossilight", "Grape", "Green Apple", "Guanabana", "Hive Fruit", "Honeysuckle", "Horned Dinoshroom", "Ice Cream Bean", "Kiwi", "Lavender", "Lemon", "Liberty Lily", "Lilac", "Lily of the Valley", "Lime", "Loquat", "Lotus", "Lumira", "Manuka Flower", "Mango", "Mega Mushroom", "Merica Mushroom", "Mint", "Moon Blossom", "Moon Melon", "Moon Mango", "Moonflower", "Moonglow", "Mushroom", "Nectar Thorn", "Nectarine", "Nectarshade", "Noble Flower", "Orange Tulip", "Papaya", "Paradise Petal", "Parasol Flower", "Passionfruit", "Peace Lily", "Peach", "Pepper", "Pear", "Pineapple", "Pink Lily", "Pink Tulip", "Pitcher Plant", "Plasma", "Prickly Pear", "Pumpkin", "Purple Cabbage", "Purple Dahlia", "Rafflesia", "Raspberry", "Red Lollipop", "Rose", "Rosy Delight", "Soul Fruit", "Stonebite", "Starfruit", "Strawberry", "Sugar Apple", "Succulent", "Suncoil", "Sunflower", "Traveler's Fruit", "Tomato", "Venus Fly Trap", "Violet Corn", "Watermelon", "White Mulberry", "Wild Carrot"},
   mutation = {
-    "Any", "Alienlike", "Amber", "AncientAmber", "Aurora", "Bloodlit", "Burnt", "Celestial", "Chilled", "Choc", "Clay",
-    "Cloudtouched", "Cooked", "Dawnbound", "Disco", "Drenched", "Fried", "Frozen", "Galactic", "Heavenly",
-    "HoneyGlazed", "Meteoric", "Molten", "Moonlit", "OldAmber", "Paradisal", "Plasma", "Pollinated", "Sandy",
-    "Shocked", "Sundried", "Twisted", "Verdant", "Voidtouched", "Wet", "Wiltproof", "Windstruck", "Zombified"
+    "Shocked", "Windstruck", "Dawnbound", "Twisted", "Cloudtouched", 
+    "Voidtouched", "Wet", "Fried", "Molten", "Alienlike", 
+    "Galactic", "Aurora", "Chilled", "Sundried", "Wiltproof", 
+    "Drenched", "Verdant", "Paradisal", "Frozen", "Disco", 
+    "Choc", "Plasma", "Heavenly", "Burnt", "Cooked", 
+    "Moonlit", "Bloodlit", "Zombified", "Celestial", "Meteoric", 
+    "HoneyGlazed", "Pollinated", "Amber", "OldAmber", "AncientAmber", 
+    "Sandy", "Clay", "Ceramic", "Friendbound", "Tempestuous", 
+    "Infected"
   },
   pet = {
     "Axolotl", "Bald Eagle", "Bear Bee", "Bee", "Black Bunny", "Blood Hedgehog", "Blood Kiwi", "Blood Owl",
