@@ -5,6 +5,7 @@ local freescripts = {
 }
 local scripts = {
     [126884695634066] = "https://api.luarmor.net/files/v3/loaders/7a953911595e67e8494c3d3446b8be5b.lua",
+    [126509999114328] = "https://api.luarmor.net/files/v3/loaders/c67687e7d7ae30e2e9fd5658f34e8292.lua",
 }
 
 loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/untitled.lua"))()
