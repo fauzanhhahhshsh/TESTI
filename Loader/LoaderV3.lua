@@ -1,11 +1,7 @@
-
-repeat
-    task.wait()
-until game:IsLoaded() and game:GetService("Players") and game:GetService("Players").LocalPlayer and
-    game:GetService("Players").LocalPlayer.Character
+repeat task.wait() until game:IsLoaded() and game:GetService("Players") and game:GetService("Players").LocalPlayer and game:GetService("Players").LocalPlayer.Character
 
 local scripts = {
-    [126884695634066] = "7a953911595e67e8494c3d3446b8be5b"
+    [126884695634066] = "7a953911595e67e8494c3d3446b8be5b", 
     [126509999114328] = "c67687e7d7ae30e2e9fd5658f34e8292",
 }
 local api = loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))()
