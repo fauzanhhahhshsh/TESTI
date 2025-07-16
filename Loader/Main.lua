@@ -14,8 +14,22 @@ local rinku = "https://ads.luarmor.net/get_key?for=Rinku_No_Lag-pozgARUxinWe"
 if script_key and script_key ~= "" and script_key ~= "your_key" then
     local url = scripts[game.PlaceId]
     if url then
-        loadstring(game:HttpGetAsync(url))()
-        isLoad = true
+       api.script_id = url
+       local status = api.check_key(script_key)
+
+       if (status.code == "KEY_VALID") then
+           api.load_script()
+           return
+       elseif (status.code == "KEY_HWID_LOCKED") then
+            showNotification("Key linked to a different HWID. Please reset it using our bot")
+             return
+       elseif (status.code == "KEY_INCORRECT") then
+             showNotification("Key is wrong, please input valid key or get new key!")
+              return
+        else
+             showNotification("Key check failed:" .. status.message .. " Code: " .. status.code)
+          end
+          isLoad = true
     end
 end
 if not isLoad then
