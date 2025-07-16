@@ -413,7 +413,7 @@ if not isLoad then
             backButton.Size = UDim2.new(0, 40, 1, 0)
             backButton.Position = UDim2.new(1, -80, 0, 0)
             backButton.BackgroundTransparency = 1
-            backButton.Text = "↻"
+            backButton.Text = "←"
             backButton.TextColor3 = Color3.fromRGB(255, 255, 255)
             backButton.TextSize = 18
             backButton.Font = Enum.Font.GothamSemibold
@@ -635,7 +635,7 @@ if not isLoad then
             backButton.Size = UDim2.new(0, 40, 1, 0)
             backButton.Position = UDim2.new(1, -80, 0, 0)
             backButton.BackgroundTransparency = 1
-            backButton.Text = "â†"
+            backButton.Text = "←"
             backButton.TextColor3 = Color3.fromRGB(255, 255, 255)
             backButton.TextSize = 18
             backButton.Font = Enum.Font.GothamSemibold
