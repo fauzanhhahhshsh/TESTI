@@ -106,7 +106,7 @@ if not isLoad then
     inputkeyButton.Position = UDim2.new(0, 0, 0, 55)
     inputkeyButton.BackgroundColor3 = Color3.fromRGB(60, 60, 80)
     inputkeyButton.BorderSizePixel = 0
-    inputkeyButton.Text = "Input Key [ðŸ”‘]"
+    inputkeyButton.Text = "Input Key [📝]"
     inputkeyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
     inputkeyButton.TextSize = 16
     inputkeyButton.Font = Enum.Font.GothamSemibold
@@ -122,7 +122,7 @@ if not isLoad then
     keyButton.Position = UDim2.new(0, 0, 0, 0)
     keyButton.BackgroundColor3 = Color3.fromRGB(60, 60, 80)
     keyButton.BorderSizePixel = 0
-    keyButton.Text = "Get Key [ðŸ”—]"
+    keyButton.Text = "Get Key [🔑]"
     keyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
     keyButton.TextSize = 16
     keyButton.Font = Enum.Font.GothamSemibold
