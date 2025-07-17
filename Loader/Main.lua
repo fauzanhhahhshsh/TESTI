@@ -1,3 +1,38 @@
+repeat task.wait() until game:IsLoaded() and game:GetService("Players") and game:GetService("Players").LocalPlayer and game:GetService("Players").LocalPlayer.Character
+
+local scripts = {
+    [126884695634066] = "7a953911595e67e8494c3d3446b8be5b", 
+    [126509999114328] = "c67687e7d7ae30e2e9fd5658f34e8292",
+}
+local api = loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/untitled.lua"))()
+isLoad = false
+local lootlabs = "https://ads.luarmor.net/get_key?for=Lootlabs_No_Lag-WAKXwZFYPyHF"
+local linkvertise = "https://ads.luarmor.net/get_key?for=Linkvertise_No_Lag-mSdMfyEDdcbV"
+local rinku = "https://ads.luarmor.net/get_key?for=Rinku_No_Lag-pozgARUxinWe"
+
+if script_key and script_key ~= "" and script_key ~= "your_key" then
+    local url = scripts[game.PlaceId]
+    if url then
+       api.script_id = url
+       local status = api.check_key(script_key)
+
+       if (status.code == "KEY_VALID") then
+           api.load_script()
+           return
+       elseif (status.code == "KEY_HWID_LOCKED") then
+            showNotification("Key linked to a different HWID. Please reset it using our bot")
+             return
+       elseif (status.code == "KEY_INCORRECT") then
+             showNotification("Key is wrong, please input valid key or get new key!")
+              return
+        else
+             showNotification("Key check failed:" .. status.message .. " Code: " .. status.code)
+          end
+          isLoad = true
+    end
+end
+if not isLoad then
     local Players = game:GetService("Players")
     local TweenService = game:GetService("TweenService")
     local UserInputService = game:GetService("UserInputService")
@@ -462,355 +497,4 @@
                         }
                     )
 
-                    tween:Play()
-                    tween.Completed:Wait()
-                    keyFrame:Destroy()
-                end
-            )
-
-            -- Back button functionality
-            backButton.MouseButton1Click:Connect(
-                function()
-                    local tween =
-                        TweenService:Create(
-                        keyFrame,
-                        TweenInfo.new(0.3),
-                        {
-                            Size = UDim2.new(0, 0, 0, 0),
-                            Position = UDim2.new(0.5, 0, 0.5, 0)
-                        }
-                    )
-
-                    tween:Play()
-                    tween.Completed:Wait()
-                    keyFrame:Destroy()
-
-                    -- Reopen main frame
-                    mainFrame.BackgroundTransparency = 0.1
-                    mainFrame.Size = UDim2.new(0, 350, 0, 250)
-                    mainFrame.Position = UDim2.new(0.5, -30, 0.5, -30)
-                end
-            )
-
-            lootlabsButton.MouseButton1Click:Connect(
-                function()
-                    TweenService:Create(lootlabsButton, TweenInfo.new(0.1), {Size = UDim2.new(1, -45, 0, 35)}):Play()
-                    wait(0.1)
-                    TweenService:Create(lootlabsButton, TweenInfo.new(0.1), {Size = UDim2.new(1, -40, 0, 40)}):Play()
-                    setclipboard(lootlabs)
-                    showNotification("Successfully Copied Lootlabs Key Link\nPaste it in your browser to continue")
-                end
-            )
-
-            linkVertiseButton.MouseButton1Click:Connect(
-                function()
-                    TweenService:Create(linkVertiseButton, TweenInfo.new(0.1), {Size = UDim2.new(1, -45, 0, 35)}):Play()
-                    wait(0.1)
-                    TweenService:Create(linkVertiseButton, TweenInfo.new(0.1), {Size = UDim2.new(1, -40, 0, 40)}):Play()
-                    setclipboard(linkvertise)
-                    showNotification("Successfully Copied Linkvertise Key Link\nPaste it in your browser to continue")
-                end
-            )
-
-            rinkuButton.MouseButton1Click:Connect(
-                function()
-                    TweenService:Create(rinkuButton, TweenInfo.new(0.1), {Size = UDim2.new(1, -45, 0, 35)}):Play()
-                    wait(0.1)
-                    TweenService:Create(rinkuButton, TweenInfo.new(0.1), {Size = UDim2.new(1, -40, 0, 40)}):Play()
-                    setclipboard(rinku)
-                    showNotification("Successfully Copied Rinku Key Link\nPaste it in your browser to continue")
-                end
-            )
-            makeDraggable(keyFrame, keyTitle)
-        end
-    )
-
-    inputkeyButton.MouseButton1Click:Connect(
-        function()
-            TweenService:Create(keyButton, TweenInfo.new(0.1), {Size = UDim2.new(1, -5, 0, 40)}):Play()
-            wait(0.1)
-            TweenService:Create(keyButton, TweenInfo.new(0.1), {Size = UDim2.new(1, 0, 0, 45)}):Play()
-
-            local closeTween =
-                TweenService:Create(
-                mainFrame,
-                TweenInfo.new(0.3),
-                {
-                    BackgroundTransparency = 1,
-                    Size = UDim2.new(0, 0, 0, 0),
-                    Position = UDim2.new(0.5, 0, 0.5, 0)
-                }
-            )
-
-            closeTween:Play()
-            closeTween.Completed:Wait()
-
-            local keyFrame = Instance.new("Frame")
-            keyFrame.Name = "KeyFrame"
-            keyFrame.Size = UDim2.new(0, 350, 0, 200) -- Increased height to accommodate new button
-            keyFrame.Position = UDim2.new(0.5, -30, 0.5, -30)
-            keyFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-            keyFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 40)
-            keyFrame.BackgroundTransparency = 0.1
-            keyFrame.BorderSizePixel = 0
-            keyFrame.ClipsDescendants = true
-            keyFrame.Parent = gui
-
-            local keyCorner = Instance.new("UICorner")
-            keyCorner.CornerRadius = UDim.new(0, 12)
-            keyCorner.Parent = keyFrame
-
-            local keyShadow = Instance.new("ImageLabel")
-            keyShadow.Name = "Shadow"
-            keyShadow.Image = "rbxassetid://1316045217"
-            keyShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
-            keyShadow.ImageTransparency = 0.8
-            keyShadow.ScaleType = Enum.ScaleType.Slice
-            keyShadow.SliceCenter = Rect.new(10, 10, 118, 118)
-            keyShadow.Size = UDim2.new(1, 20, 1, 20)
-            keyShadow.Position = UDim2.new(0, -10, 0, -10)
-            keyShadow.BackgroundTransparency = 1
-            keyShadow.Parent = keyFrame
-            keyShadow.ZIndex = -1
-
-            local keyTitleBar = Instance.new("Frame")
-            keyTitleBar.Name = "TitleBar"
-            keyTitleBar.Size = UDim2.new(1, 0, 0, 40)
-            keyTitleBar.Position = UDim2.new(0, 0, 0, 0)
-            keyTitleBar.BackgroundColor3 = Color3.fromRGB(25, 25, 35)
-            keyTitleBar.BorderSizePixel = 0
-            keyTitleBar.Parent = keyFrame
-
-            local keyTitleCorner = Instance.new("UICorner")
-            keyTitleCorner.CornerRadius = UDim.new(0, 12)
-            keyTitleCorner.Parent = keyTitleBar
-
-            local keyTitle = Instance.new("TextLabel")
-            keyTitle.Name = "Title"
-            keyTitle.Size = UDim2.new(1, -40, 1, 0)
-            keyTitle.Position = UDim2.new(0, 20, 0, 0)
-            keyTitle.BackgroundTransparency = 1
-            keyTitle.Text = "[No Lag] Key Input"
-            keyTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-            keyTitle.TextSize = 18
-            keyTitle.Font = Enum.Font.GothamSemibold
-            keyTitle.TextXAlignment = Enum.TextXAlignment.Left
-            keyTitle.Parent = keyTitleBar
-
-            local keyCloseButton = Instance.new("TextButton")
-            keyCloseButton.Name = "CloseButton"
-            keyCloseButton.Size = UDim2.new(0, 40, 1, 0)
-            keyCloseButton.Position = UDim2.new(1, -40, 0, 0)
-            keyCloseButton.BackgroundTransparency = 1
-            keyCloseButton.Text = "X"
-            keyCloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-            keyCloseButton.TextSize = 18
-            keyCloseButton.Font = Enum.Font.GothamSemibold
-            keyCloseButton.Parent = keyTitleBar
-
-            -- Add back button to return to main UI
-            local backButton = Instance.new("TextButton")
-            backButton.Name = "BackButton"
-            backButton.Size = UDim2.new(0, 40, 1, 0)
-            backButton.Position = UDim2.new(1, -80, 0, 0)
-            backButton.BackgroundTransparency = 1
-            backButton.Text = "←"
-            backButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-            backButton.TextSize = 18
-            backButton.Font = Enum.Font.GothamSemibold
-            backButton.Parent = keyTitleBar
-
-            local inputFrame = Instance.new("Frame")
-            inputFrame.Name = "InputFrame"
-            inputFrame.Size = UDim2.new(1, -40, 0, 40)
-            inputFrame.Position = UDim2.new(0, 20, 0, 60)
-            inputFrame.BackgroundColor3 = Color3.fromRGB(60, 60, 80)
-            inputFrame.BorderSizePixel = 0
-            inputFrame.Parent = keyFrame
-
-            local inputCorner = Instance.new("UICorner")
-            inputCorner.CornerRadius = UDim.new(0, 8)
-            inputCorner.Parent = inputFrame
-
-            local inputBox = Instance.new("TextBox")
-            inputBox.Name = "InputBox"
-            inputBox.Size = UDim2.new(1, -20, 1, -10)
-            inputBox.Position = UDim2.new(0, 10, 0, 5)
-            inputBox.BackgroundTransparency = 1
-            inputBox.PlaceholderText = "Enter key here..."
-            inputBox.Text = ""
-            inputBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-            inputBox.TextSize = 14
-            inputBox.Font = Enum.Font.Gotham
-            inputBox.Parent = inputFrame
-
-            local submitButton = Instance.new("TextButton")
-            submitButton.Name = "SubmitButton"
-            submitButton.Size = UDim2.new(1, -40, 0, 40)
-            submitButton.Position = UDim2.new(0, 20, 0, 120)
-            submitButton.BackgroundColor3 = Color3.fromRGB(0, 128, 0)
-            submitButton.BorderSizePixel = 0
-            submitButton.Text = "Submit Key"
-            submitButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-            submitButton.TextSize = 16
-            submitButton.Font = Enum.Font.GothamSemibold
-            submitButton.Parent = keyFrame
-
-            local submitCorner = Instance.new("UICorner")
-            submitCorner.CornerRadius = UDim.new(0, 8)
-            submitCorner.Parent = submitButton
-
-            buttonHoverEffect(submitButton)
-
-            keyCloseButton.MouseButton1Click:Connect(
-                function()
-                    local tween =
-                        TweenService:Create(
-                        keyFrame,
-                        TweenInfo.new(0.3),
-                        {
-                            Size = UDim2.new(0, 0, 0, 0),
-                            Position = UDim2.new(0.5, 0, 0.5, 0)
-                        }
-                    )
-
-                    tween:Play()
-                    tween.Completed:Wait()
-                    keyFrame:Destroy()
-                end
-            )
-
-            -- Back button functionality
-            backButton.MouseButton1Click:Connect(
-                function()
-                    local tween =
-                        TweenService:Create(
-                        keyFrame,
-                        TweenInfo.new(0.3),
-                        {
-                            Size = UDim2.new(0, 0, 0, 0),
-                            Position = UDim2.new(0.5, 0, 0.5, 0)
-                        }
-                    )
-
-                    tween:Play()
-                    tween.Completed:Wait()
-                    keyFrame:Destroy()
-
-                    -- Reopen main frame
-                    mainFrame.BackgroundTransparency = 0.1
-                    mainFrame.Size = UDim2.new(0, 350, 0, 250)
-                    mainFrame.Position = UDim2.new(0.5, -30, 0.5, -30)
-                end
-            )
-
-            submitButton.MouseButton1Click:Connect(
-                function()
-                    TweenService:Create(submitButton, TweenInfo.new(0.1), {Size = UDim2.new(1, -45, 0, 35)}):Play()
-                    wait(0.1)
-                    TweenService:Create(submitButton, TweenInfo.new(0.1), {Size = UDim2.new(1, -40, 0, 40)}):Play()
-
-                    local enteredKey = inputBox.Text
-                    local correctKeyLength = 32
-
-                    if #enteredKey == correctKeyLength then
-                        local tween =
-                            TweenService:Create(
-                            keyFrame,
-                            TweenInfo.new(0.3),
-                            {
-                                BackgroundTransparency = 1,
-                                Size = UDim2.new(0, 0, 0, 0),
-                                Position = UDim2.new(0.5, 0, 0.5, 0)
-                            }
-                        )
-                        tween:Play()
-                        tween.Completed:Wait()
-                        keyFrame:Destroy()
-                        task.spawn(
-                            function()
-                                script_key = tostring(enteredKey)
-                                local url = scripts[game.PlaceId]
-                                if url then
-                                    api.script_id = url
-                                    local status = api.check_key(script_key)
-
-                                    if (status.code == "KEY_VALID") then
-                                        api.load_script()
-                                        return
-                                    elseif (status.code == "KEY_HWID_LOCKED") then
-                                        showNotification(
-                                            "Key linked to a different HWID. Please reset it using our bot"
-                                        )
-                                        return
-                                    elseif (status.code == "KEY_INCORRECT") then
-                                        showNotification("Key is wrong, please input valid key or get new key!")
-                                        return
-                                    else
-                                        showNotification(
-                                            "Key check failed:" .. status.message .. " Code: " .. status.code
-                                        )
-                                    end
-                                end
-                            end
-                        )
-                    else
-                        local shake1 =
-                            TweenService:Create(inputFrame, TweenInfo.new(0.05), {Position = UDim2.new(0, 25, 0, 60)})
-                        local shake2 =
-                            TweenService:Create(inputFrame, TweenInfo.new(0.05), {Position = UDim2.new(0, 15, 0, 60)})
-                        local shake3 =
-                            TweenService:Create(inputFrame, TweenInfo.new(0.05), {Position = UDim2.new(0, 20, 0, 60)})
-
-                        shake1:Play()
-                        shake1.Completed:Wait()
-                        shake2:Play()
-                        shake2.Completed:Wait()
-                        shake3:Play()
-
-                        inputFrame.BackgroundColor3 = Color3.fromRGB(100, 30, 30)
-                        wait(0.5)
-                        inputFrame.BackgroundColor3 = Color3.fromRGB(60, 60, 80)
-                    end
-                end
-            )
-            makeDraggable(keyFrame, keyTitle)
-        end
-    )
-
-    mainFrame.BackgroundTransparency = 1
-    mainFrame.Size = UDim2.new(0, 0, 0, 0)
-    mainFrame.Parent = gui
-
-    closeButton.MouseButton1Click:Connect(
-        function()
-            local tween =
-                TweenService:Create(
-                mainFrame,
-                TweenInfo.new(0.3),
-                {
-                    Size = UDim2.new(0, 0, 0, 0),
-                    Position = UDim2.new(0.5, 0, 0.5, 0)
-                }
-            )
-
-            tween:Play()
-            tween.Completed:Wait()
-            gui:Destroy()
-        end
-    )
-
-    makeDraggable(mainFrame, titleBar)
-
-    local openTween =
-        TweenService:Create(
-        mainFrame,
-        TweenInfo.new(0.5, Enum.EasingStyle.Back, Enum.EasingDirection.Out),
-        {
-            BackgroundTransparency = 0.1,
-            Size = UDim2.new(0, 350, 0, 250),
-            Position = UDim2.new(0.5, -30, 0.5, -30)
-        }
-    )
-    openTween:Play()
-end
+                    tween:Play
