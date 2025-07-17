@@ -1,3 +1,36 @@
+repeat task.wait() until game:IsLoaded() and game:GetService("Players") and game:GetService("Players").LocalPlayer and game:GetService("Players").LocalPlayer.Character
+
+local scripts = {
+    [126884695634066] = "7a953911595e67e8494c3d3446b8be5b", 
+    [126509999114328] = "c67687e7d7ae30e2e9fd5658f34e8292",
+}
+local api = loadstring(game:HttpGet("https://sdkapi-public.luarmor.net/library.lua"))()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/NoLag-id/No-Lag-HUB/refs/heads/main/untitled.lua"))()
+isLoad = false
+local lootlabs = "https://ads.luarmor.net/get_key?for=Lootlabs_No_Lag-WAKXwZFYPyHF"
+local linkvertise = "https://ads.luarmor.net/get_key?for=Linkvertise_No_Lag-mSdMfyEDdcbV"
+local rinku = "https://ads.luarmor.net/get_key?for=Rinku_No_Lag-pozgARUxinWe"
+
+if script_key and script_key ~= "" and script_key ~= "your_key" then
+    local url = scripts[game.PlaceId]
+    if url then
+       api.script_id = url
+       local status = api.check_key(script_key)
+
+       if (status.code == "KEY_VALID") then
+           api.load_script()
+           return
+       elseif (status.code == "KEY_HWID_LOCKED") then
+            showNotification("Key linked to a different HWID. Please reset it using our bot")
+             return
+       elseif (status.code == "KEY_INCORRECT") then
+             showNotification("Key is wrong, please input valid key or get new key!")
+              return
+        else
+             showNotification("Key check failed:" .. status.message .. " Code: " .. status.code)
+          end
+          isLoad = true
+    end
 end
     local Players = game:GetService("Players")
     local TweenService = game:GetService("TweenService")
